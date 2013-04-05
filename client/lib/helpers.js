@@ -1,3 +1,7 @@
+Handlebars.registerHelper("navClassFor", function (nav, options) {
+  return (Meteor.router.navEquals(nav)) ? 'active' : '';
+});
+  
 $.fn.serializeObject = function (){
   var o = {};
   var a = this.serializeArray();

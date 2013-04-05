@@ -3,19 +3,28 @@
 </head>
 
 <body>
-  <div style="float: left;">
-    {{> topicList}}
-  </div>
-  <div style="float: left;">
-    {{> meetupList}}
-  </div>
-  <div style="float: left;">
-    {{> login}}
-  </div>
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="layout">
+  <div class="container container-wrapper">
+    <div class="container">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <a class="brand" href="/">Meteor Ruhrpott</a>
+          <ul class="nav">
+            <li class="{{navClassFor 'meetupList'}}"><a href="/">Meetups</a></li>
+            <li class="{{navClassFor 'topicList'}}"><a href="/topics">Topics</a></li>           
+          </ul>
+        </div>
+      </div>
+      {{{yield}}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <a target="_blank" href="http://manuel-schoebel.com/imprint">Impressum</a>
+      </div>
+    </div>
+  </div>
 </template>

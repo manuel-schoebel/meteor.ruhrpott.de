@@ -3,34 +3,48 @@
 </template>
 
 <template name="topicList">
-  <h2>Topics</h2>
-   <form>
-    <label>Name:</label>
-    <input name="name" type="text">
-    <input type="submit" value="Add">
-  </form>
-  <table>
-    <thead>
-      <tr>
-        <th>Votes</th>
-        <th>Name</th>
-        <th>Speaker</th>
-        <th>Options</th>
-      </tr>
-    </thead>
-    <tbody>
-    {{#each topics}}
-      <tr>
-        <td>{{votes}}</td>
-        <td>{{name}}</td>
-        <td>{{speaker}}</td>
-        <td>
-          <button data-id="{{_id}}" class="vote">vote</button>
-          <button data-id="{{_id}}" class="register-speaker">register</button>
-        </td>
-      </tr>
-      <li>#{{votes}} {{name}} <button>Vote</button></li>
-    {{/each}}
-    </tbody>
-  </table>
+  <h1>Topics</h1>
+  <div class="row">
+    <div class="span8">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Votes</th>
+            <th>Name</th>
+            <th>Speaker</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each topics}}
+          <tr>
+            <td>{{votes}}</td>
+            <td>{{name}}</td>
+            <td>{{speaker}}</td>
+            <td>
+              <button class="btn vote" data-id="{{_id}}">vote</button>
+              <button class="btn register-speaker" data-id="{{_id}}">register</button>
+              <button class="btn btn-danger delete" data-id="{{_id}}">delete</button>
+            </td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <div class="span4">
+      <form>
+        <div class="control-group">
+          <label class="control-label">Name:</label>
+          <div class="controls">
+            <input name="name" type="text">
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+
+  
 </template>

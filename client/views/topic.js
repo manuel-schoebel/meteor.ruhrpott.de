@@ -17,5 +17,10 @@ Template.topicList.events({
   'click .vote' : function(evt){
     var id = $(evt.currentTarget).attr('data-id');
     Topic.update({_id: id}, {$inc: {votes: 1}});
+  },
+  'click .delete' : function(evt){
+    
+    var id = $(evt.currentTarget).attr('data-id');    console.log('click', id);
+    Topic.remove({_id: id});
   }
 });

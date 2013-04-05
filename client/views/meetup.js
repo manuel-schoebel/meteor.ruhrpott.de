@@ -10,5 +10,9 @@ Template.meetupList.events({
     var data = $(evt.currentTarget).serializeObject();
     Meetup.insert(data);
     return false;
+  },
+  'click .delete' : function(evt){
+    var id = $(evt.currentTarget).attr('data-id');
+    Meetup.remove({_id: id});
   }
 });
