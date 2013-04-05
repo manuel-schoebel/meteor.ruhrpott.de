@@ -1,0 +1,1 @@
+Topic = new Meteor.Collection('topic');

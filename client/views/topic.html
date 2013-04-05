@@ -4,6 +4,11 @@
 
 <template name="topicList">
   <h2>Topics</h2>
+   <form>
+    <label>Name:</label>
+    <input name="name" type="text">
+    <input type="submit" value="Add">
+  </form>
   <table>
     <thead>
       <tr>
@@ -20,8 +25,8 @@
         <td>{{name}}</td>
         <td>{{speaker}}</td>
         <td>
-          <button class="vote">vote</button>
-          <button class="register-speaker">register</button>
+          <button data-id="{{_id}}" class="vote">vote</button>
+          <button data-id="{{_id}}" class="register-speaker">register</button>
         </td>
       </tr>
       <li>#{{votes}} {{name}} <button>Vote</button></li>
