@@ -1,0 +1,31 @@
+<template name="topic">
+  
+</template>
+
+<template name="topicList">
+  <h1>Topics</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Votes</th>
+        <th>Name</th>
+        <th>Speaker</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each topics}}
+      <tr>
+        <td>{{votes}}</td>
+        <td>{{name}}</td>
+        <td>{{speaker}}</td>
+        <td>
+          <button class="vote">vote</button>
+          <button class="register-speaker">register</button>
+        </td>
+      </tr>
+      <li>#{{votes}} {{name}} <button>Vote</button></li>
+    {{/each}}
+    </tbody>
+  </table>
+</template>
